@@ -28,7 +28,7 @@ exports.createProduct = async (req, res) => {
 exports.getProducts = async (req, res) => {
     try {
       // Fetch the list of products
-      const productList = await measurements.find({}, { _id: 0, __v: 0 });
+      const productList = await measurements.find({}, {});
   
       res.status(200).json({ productList });
       console.log("Product List:", productList);
