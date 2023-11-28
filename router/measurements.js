@@ -51,6 +51,9 @@ router.put("/productedit/:id", upload.single("productimg"), mesaurements.updatep
 
 router.get("/productdel/:id", mesaurements.productdelete )
 
+router.get('/products', mesaurements.getProducts);
+
+
 
 
 

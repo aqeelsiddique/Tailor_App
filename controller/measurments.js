@@ -25,7 +25,18 @@ exports.createProduct = async (req, res) => {
     }
     
 };
-
+exports.getProducts = async (req, res) => {
+    try {
+      // Fetch the list of products
+      const productList = await measurements.find({}, { _id: 0, __v: 0 });
+  
+      res.status(200).json({ productList });
+      console.log("Product List:", productList);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  };
 
 exports.updateproduct = (req, res) => {
     let readquery = req.params.id; 
